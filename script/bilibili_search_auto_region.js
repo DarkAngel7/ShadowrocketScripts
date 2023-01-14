@@ -54,6 +54,9 @@ async function processRequest() {
       body = processNewBody(requestType.encode(requestObj).finish());
     }
   } else if (url.includes("SearchByType")) {
+    $done({});
+    return;
+
     console.log('SearchByType');
     const requestType = biliRoot.lookupType("bilibili.polymer.app.search.v1.SearchByTypeRequest");
     let requestObj = requestType.decode(unGzipBody);
