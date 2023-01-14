@@ -84,9 +84,9 @@ if(needProcessFlag){
 }
 
 async function SwitchRegionAndGetNewKeyword(keyword) {
-  let newKeyword = keyword.replace(/ (港|台|中)/g, '')
-  await SwitchRegion(keyword)
-  return newKeyword
+  let newKeyword = keyword.replace(/ (港|台|中)/g, '');
+  await SwitchRegion(keyword);
+  return newKeyword;
 }
 
 async function SwitchRegion(play) {
