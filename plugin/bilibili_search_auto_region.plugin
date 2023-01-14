@@ -1,14 +1,13 @@
-#!url=
+#!url=https://raw.githubusercontent.com/DarkAngel7/ShadowrocketScripts/main/plugin/bilibili_search_auto_region.plugin
 #!name=bilibili搜索自动换区
 #!desc=哔哩哔哩, 港澳台搜索番剧自动切换地区
 #!author=Dennpa
-#!homepage=https://github.com/Coldvvater/Mononoke
+#!homepage=https://github.com/DarkAngel7/ShadowrocketScripts
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_3.png
 
 [MITM]
-
 hostname = %APPEND% ap?.bili*i.com, ap?.bili*i.net, grpc.biliapi.net
 
 [Script]
 #可选, 适用于搜索指定地区的番剧
-http-request ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.polymer\.app\.search\.v\d\.Search\/Search(ByType|All)$ script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js, requires-body=true, binary-body-mode=true, tag=bili自动地区(搜索)
+http-request ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.polymer\.app\.search\.v\d\.Search\/Search(ByType|All)$ script-path=https://raw.githubusercontent.com/DarkAngel7/ShadowrocketScripts/main/script/bilibili_search_auto_region.js, requires-body=true, binary-body-mode=true, tag=bili自动地区(搜索)
