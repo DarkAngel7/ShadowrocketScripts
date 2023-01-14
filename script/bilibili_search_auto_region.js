@@ -23,7 +23,7 @@ async function processRequest() {
     gzipStrName = 'Grpc-Encoding';
   }
 
-  const isGzipCompress = headers[gzipStrName] === 'gzip';
+  const isGzipCompress = headers[gzipStrName] === 'gzip' && !url.includes("SearchByType");
   console.log(`isGzipCompress:${isGzipCompress}`);
   const unGzipBody = isGzipCompress ? pako.ungzip(binaryBody.slice(5)) : binaryBody.slice(5);
 
