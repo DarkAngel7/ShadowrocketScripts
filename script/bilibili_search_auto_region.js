@@ -34,14 +34,14 @@ if (url.includes("SearchAll")) {
   console.log('SearchAll');
   const requestType = biliRoot.lookupType("bilibili.polymer.app.search.v1.SearchAllRequest");
   let requestObj = requestType.decode(unGzipBody);
-  const keyword = requestObj.keyword
+  const keyword = requestObj.keyword;
   $notification.post("SearchAll", 'before modify', JSON.stringify(requestObj));
 
   let newKeyword = await SwitchRegionAndGetNewKeyword(keyword);
-  needProcessFlag = keyword !== newKeyword
+  needProcessFlag = keyword !== newKeyword;
 
   if(needProcessFlag){
-    requestObj.keyword = newKeyword
+    requestObj.keyword = newKeyword;
 
     $notification.post("SearchAll", 'after modify', JSON.stringify(requestObj));
 
@@ -51,14 +51,14 @@ if (url.includes("SearchAll")) {
   console.log('SearchByType');
   const requestType = biliRoot.lookupType("bilibili.polymer.app.search.v1.SearchByTypeRequest");
   let requestObj = requestType.decode(unGzipBody);
-  const keyword = requestObj.keyword
+  const keyword = requestObj.keyword;
   $notification.post("SearchByType", 'before modify', JSON.stringify(requestObj));
 
   let newKeyword = await SwitchRegionAndGetNewKeyword(keyword);
-  needProcessFlag = keyword !== newKeyword
+  needProcessFlag = keyword !== newKeyword;
 
   if(needProcessFlag){
-    requestObj.keyword = newKeyword
+    requestObj.keyword = newKeyword;
     $notification.post("SearchByType", 'after modify', JSON.stringify(requestObj));
 
     body = processNewBody(requestType.encode(requestObj).finish());
