@@ -54,9 +54,6 @@ async function processRequest() {
       body = processNewBody(requestType.encode(requestObj).finish());
     }
   } else if (url.includes("SearchByType")) {
-    $done({});
-    return;
-
     console.log('SearchByType');
     const requestType = biliRoot.lookupType("bilibili.polymer.app.search.v1.SearchByTypeRequest");
     let requestObj = requestType.decode(unGzipBody);
@@ -68,6 +65,9 @@ async function processRequest() {
 
     if (needProcessFlag) {
       requestObj.keyword = info.keyword;
+      // Why? I don't know! Without this it would not work 
+      JSON.stringify(headers);
+
       // $notification.post("SearchByType", 'after modify', JSON.stringify(requestObj));
 
       body = processNewBody(requestType.encode(requestObj).finish());
