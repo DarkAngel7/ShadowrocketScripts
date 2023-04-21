@@ -5,11 +5,9 @@
 #!homepage=https://github.com/DarkAngel7/ShadowrocketScripts
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_3.png
 
+[MITM]
+hostname = %APPEND% *.hdslb.com
 
 [Script]
 # ～ 嗶哩嗶哩繁體CC字幕轉中文簡體@ddgksf2013
 bilibili_cc = type=http-response,pattern=https://(i|aisubtitle).hdslb.com/bfs/subtitle/.+json(.+)?,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_cc.js
-
-
-[MITM]
-hostname = %APPEND% *.hdslb.com
