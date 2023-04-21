@@ -6,7 +6,7 @@
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_3.png
 
 [MITM]
-hostname = %APPEND% *.hdslb.com
+hostname = *.hdslb.com
 
 [Script]
 # ～ 嗶哩嗶哩繁體CC字幕轉中文簡體@ddgksf2013
