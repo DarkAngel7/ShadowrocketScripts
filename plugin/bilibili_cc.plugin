@@ -8,7 +8,7 @@
 
 [Script]
 # ～ 嗶哩嗶哩繁體CC字幕轉中文簡體@ddgksf2013
-bilibili_cc = type=http-response,pattern= https://(i|aisubtitle).hdslb.com/bfs/subtitle/.+json(.+)?,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_cc.js
+bilibili_cc = type=http-response,pattern=https://(i|aisubtitle).hdslb.com/bfs/subtitle/.+json(.+)?,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/bilibili_cc.js
 
 
 [MITM]
